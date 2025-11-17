@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northcastle Holdings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== Navbar (from first code) ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 80px;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f4c542;
+    }
+
+    .btn-yellow {
+      background-color: #f4c542;
+      color: #111;
+      padding: 10px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-yellow:hover {
+      background-color: #e0b832;
+    }
+
+    /* ===== Hero Section (from second code) ===== */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 80px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .hero-content h1 span {
+      color: #f4c542;
+      font-style: italic;
+    }
+
+    .hero-content p {
+      margin: 25px 0;
+      font-size: 16px;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .btn-outline {
+      border: 1px solid #fff;
+      padding: 12px 30px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 40px;
+      }
+      nav ul {
+        gap: 15px;
+      }
+      .hero {
+        padding: 0 40px;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+      }
+    }
+    /* ===== About Section ===== */
+.about-section {
+  background-color: #fff;
+  color: #222;
+  padding: 100px 100px 60px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.about-content {
+  max-width: 950px;
+  margin: 0 auto 80px;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about-text span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #b8993b; /* golden tone */
+  font-weight: 600;
+}
+
+.btn-dark {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #111;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.btn-dark:hover {
+  background-color: #333;
+}
+
+/* ===== Values Section ===== */
+.values {
+  background-color: #f8f7f2;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 100px;
+  border-top: 1px solid #eee;
+}
+
+.value-box {
+  flex: 1;
+  text-align: left;
+  border-left: 1px solid #e1e1e1;
+  padding-left: 40px;
+}
+
+.value-box:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.value-box .icon {
+  font-size: 28px;
+  color: #b8993b;
+  margin-bottom: 15px;
+}
+
+.value-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.value-box p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .about-section {
+    padding: 60px 30px;
+  }
+
+  .values {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .value-box {
+    border-left: none;
+    padding: 0;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap');
+
+/* ===== About Section ===== */
+.about-section {
+  background-color: #fff;
+  color: #1b1b1b;
+  padding: 100px 100px 0;
+  text-align: left;
+}
+
+.about-content {
+  max-width: 950px;
+  margin: 0 auto 80px;
+}
+
+.about-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #2a2a2a;
+  letter-spacing: 0.1px;
+}
+
+.about-text span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #b28c2f; /* warm gold */
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-dark {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #111;
+  color: #fff;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-dark:hover {
+  background-color: #333;
+}
+
+/* ===== Values Section ===== */
+.values {
+  background-color: #f9f8f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 70px 100px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.value-box {
+  flex: 1;
+  text-align: left;
+  border-left: 1px solid #d8d8d8;
+  padding-left: 40px;
+}
+
+.value-box:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.value-box .icon {
+  font-size: 26px;
+  color: #b28c2f;
+  margin-bottom: 18px;
+}
+
+.value-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: #1b1b1b;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.value-box p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .about-section {
+    padding: 60px 30px;
+  }
+
+  .values {
+    flex-direction: column;
+    padding: 50px 30px;
+  }
+
+  .value-box {
+    border-left: none;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+
+
+ .section {
+      padding: 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .left-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+
+    .tag {
+      font-size: 11px;
+      color: #777;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #111;
+      margin: 10px 0;
+    }
+
+    .author {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .right-grid .mini-card {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .right-grid .mini-card img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 1px solid #eee;
+    }
+
+    .mini-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: #111;
+      margin: 0 0 5px;
+    }
+
+    .mini-card .author {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .mini-card .desc {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .view-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .view-more button {
+      background: transparent;
+      border: 1px solid #111;
+      color: #111;
+      padding: 10px 30px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-more button:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    @media (max-width: 992px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* ===== Partners Section ===== */
+.partners-section {
+  display: flex;
+  background: #fff;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.partners-image {
+  flex: 1 1 45%;
+}
+
+.partners-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.partners-content {
+  flex: 1 1 55%;
+  padding: 80px 70px;
+}
+
+.partners-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+}
+
+.testimonial {
+  margin-bottom: 50px;
+}
+
+.testimonial p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.name {
+  font-weight: 600;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.position {
+  font-size: 14px;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.testimonial-nav a:hover {
+  color: #888;
+}
+
+/* Page background edges */
+
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .partners-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .partners-image {
+    height: 300px;
+  }
+
+  .partners-content {
+    padding: 50px 25px;
+  }
+
+  .partners-content h2 {
+    font-size: 26px;
+  }
+}
+
+  .faq-section {
+      max-width: 850px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 50px;
+      color: #1a1a1a;
+      line-height: 1.4;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 25px 0;
+      cursor: pointer;
+    }
+
+    .faq-question {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #1a1a1a;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #444;
+      max-width: 80%;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .icon {
+      transform: rotate(45deg);
+    }
+
+    .icon {
+      font-size: 22px;
+      transition: 0.3s ease;
+    } 
+
+
+      .footer {
+      background: #0f2438; /* dark navy same as screenshot */
+      color: #fff;
+      padding: 60px 60px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 70px;
+    }
+
+    /* LEFT SECTION */
+    .footer-left h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+
+    .footer-left .tagline {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .footer-left p {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 350px;
+      opacity: 0.9;
+    }
+
+    /* MIDDLE LINKS */
+    .footer-links h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 12px;
+      font-size: 14px;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    /* RIGHT CONTACT */
+    .footer-contact h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin-bottom: 18px;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      opacity: 0.9;
+    }
+
+    .contact-item i {
+      font-size: 18px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 30px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: 0.8;
+      max-width: 1200px;
+      margin: auto;
+    }
+ 
+ 
+  </style>
+</head>
+
+<body>
+  <!-- ===== Navbar ===== -->
+  <header>
+    <div class="logo">Northcastle Holdings</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Investments</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="btn-yellow">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Northcastle Holdings<br>
+        Heritage in <span>Property.</span><br>
+        Strength in Investment.
+      </h1>
+      <p>
+        Founded in 2025, Northcastle Holdings is a private property investment
+        company headquartered in Edinburgh. We specialise in the acquisition,
+        management, and long-term development of prime real estate across
+        the United Kingdom.
+      </p>
+      <a href="#" class="btn-outline">Get in Touch</a>
+    </div>
+  </section>
+
+<!-- ===== About & Values Section ===== -->
+<section class="about-section">
+  <div class="about-content">
+    <p class="about-text">
+      <span>Rooted in Heritage</span> yet focused on modern opportunities, we take a disciplined
+      approach to investment prioritising resilience, value creation, and sustainable
+      growth. From landmark city properties to strategic development opportunities,
+      Northcastle Holdings represents a trusted partner for enduring prosperity.
+    </p>
+    <a href="#" class="btn-dark">GET IN TOUCH</a>
+  </div>
+
+  <div class="values">
+    <div class="value-box">
+      <div class="icon">🤝</div>
+      <h3>Integrity</h3>
+      <p>Transparent, principled, and trustworthy</p>
+    </div>
+    <div class="value-box">
+      <div class="icon">🏛️</div>
+      <h3>Stewardship</h3>
+      <p>Protecting and enhancing property assets responsibly.</p>
+    </div>
+    <div class="value-box">
+      <div class="icon">🏅</div>
+      <h3>Excellence</h3>
+      <p>Delivering superior outcomes with lasting value.</p>
+    </div>
+  </div>
+</section>
+
+
+ <section class="section">
+    <h2>Foundations & Futures</h2>
+
+    <div class="content-grid">
+
+      <!-- LEFT GRID -->
+      <div class="left-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Property 1">
+          <p class="tag">TAG NAME HERE</p>
+          <h3>The Enduring Appeal of Prime City Properties</h3>
+          <p class="author">By STEVE NAYIS</p>
+          <p class="desc">Across the UK’s leading cities, prime real estate continues to prove its resilience. From Edinburgh’s Georgian terraces to London’s modern developments...</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80" alt="Property 2">
+          <p class="tag">TAG NAME HERE</p>
+          <h3>The Enduring Appeal of Prime City Properties</h3>
+          <p class="author">By STEVE NAYIS</p>
+          <p class="desc">Across the UK’s leading cities, prime real estate continues to prove its resilience. From Edinburgh’s Georgian terraces to London’s modern developments...</p>
+        </div>
+      </div>
+
+      <!-- RIGHT GRID -->
+      <div class="right-grid">
+        <div class="mini-card">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="">
+          <div>
+            <h4>The Enduring Appeal of Prime City Properties</h4>
+            <p class="author">By STEVE NAYIS</p>
+            <p class="desc">Across the UK’s leading cities, prime real estate continues to prove its resilience...</p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=400&q=80" alt="">
+          <div>
+            <h4>The Enduring Appeal of Prime City Properties</h4>
+            <p class="author">By STEVE NAYIS</p>
+            <p class="desc">Across the UK’s leading cities, prime real estate continues to prove its resilience...</p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=400&q=80" alt="">
+          <div>
+            <h4>The Enduring Appeal of Prime City Properties</h4>
+            <p class="author">By STEVE NAYIS</p>
+            <p class="desc">Across the UK’s leading cities, prime real estate continues to prove its resilience...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-more">
+      <button>VIEW MORE</button>
+    </div>
+  </section>
+
+<!-- ===== Partners Section ===== -->
+<section class="partners-section">
+  <div class="partners-image">
+    <img src="C:\Users\User\Desktop\AdobeStock_229930631.jpeg" alt="Partners">
+  </div>
+
+  <div class="partners-content">
+    <h2>What our partners are saying</h2>
+
+    <div class="testimonial">
+      <p>“Northcastle Holdings brings a rare combination of discipline and foresight to every project. Their attention to detail and respect for heritage makes them a standout in today’s property investment landscape.”</p>
+      <p class="name">James Walkerson</p>
+      <p class="position">Director, AW Partners Property Group</p>
+    </div>
+
+    <div class="testimonial">
+      <p>“Northcastle Holdings brings a rare combination of discipline and foresight to every project. Their attention to detail and respect for heritage makes them a standout in today’s property investment landscape.”</p>
+      <p class="name">James Walkerson</p>
+      <p class="position">Director, AW Partners Property Group</p>
+    </div>
+
+    <div class="testimonial-nav">
+      <a href="#">&larr; PREVIOUS</a>
+      <a href="#">NEXT &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <h2 class="faq-title">Quick Answers to<br>Common Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What does Northcastle Holdings do?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Northcastle Holdings is a private property investment company based in Edinburgh. 
+      We specialise in acquiring, managing, and developing high-quality real estate across 
+      the United Kingdom — with a focus on long-term value, architectural integrity, 
+      and sustainable growth.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Do you work with external investors?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, we work with private and institutional investors depending on project needs.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What types of properties do you invest in?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Residential, commercial, and mixed-use developments across the UK.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>How does Northcastle approach sustainability?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Sustainability is integrated into every stage—from design to development.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Where is Northcastle Holdings located?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Our head office is located in Edinburgh, Scotland.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>How can I get in touch?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      You can reach us via our contact page or by email.
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LEFT SIDE -->
+    <div class="footer-left">
+      <h2>Northcastle Holdings</h2>
+      <div class="tagline">HERITAGE IN PROPERTY. STRENGTH IN INVESTMENT.</div>
+
+      <p>
+        A private property investment company based in Edinburgh,
+        focused on long-term value creation through disciplined,
+        sustainable real estate investments.
+      </p>
+    </div>
+
+    <!-- MIDDLE LINKS -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Investments</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT CONTACT -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <strong>REGISTERED OFFICE</strong><br>
+          60A North Castle Street<br>
+          Edinburgh, EH2 3LU<br>
+          United Kingdom
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        info@northcastleholdings.com
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BOTTOM SMALL TEXT -->
+  <div class="footer-bottom">
+    <div>© 2025 Northcastle Holdings Ltd. All rights reserved.</div>
+    <div>Registered in Scotland No. SC681698</div>
+  </div>
+
+</footer>
+</body>
+</html>
